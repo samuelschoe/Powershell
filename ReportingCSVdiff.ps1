@@ -1,5 +1,5 @@
 #ReportingCSVdiff.ps1
-#a powershell scirpt to compare to reports in csv format and return the difference.
+#a powershell script to compare two reports in csv format and return the difference.
 #nominally to compare suspence reports for COMMS
 #created by Sam Schoeller, 3/31/15. Last modified 4/2/15
 #references:
