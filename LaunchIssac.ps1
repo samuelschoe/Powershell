@@ -5,7 +5,7 @@
 #http://blogs.technet.com/b/heyscriptingguy/archive/2014/04/29/powershell-looping-using-the-foreach-object-cmdlet.aspx
 
 
-$missinghud="C:\Users\Sam\Desktop\Misc\MissingHUD2_v1.2.3\MissingHUD2.exeShortcut.lnk" #shortcuts start minimized
+$missinghud=C:\Users\Sam\Desktop\Misc\MissingHUD2_v1.2.3\MissingHUD2.exeShortcut.lnk #shortcuts start minimized
 $array=(1..36)
 
 Start steam://rungameid/250900
