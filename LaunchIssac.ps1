@@ -6,7 +6,7 @@
 
 
 $missinghud= 'C:\Users\Sam\Desktop\Misc\MissingHUD2_v1.2.3\MissingHUD2.exeShortcut.lnk' #shortcuts start minimized
-$array=(1..144)
+$array=(1..288)
 
 Start steam://rungameid/250900
 Start-Sleep -Seconds 3
