@@ -1,3 +1,4 @@
+#Pulls folder permissions, then lets you pull group members from that list
 #Written by Sam Schoeller, 12/2/2015
 #References:
 #https://serverfault.com/questions/344304/how-can-i-add-mulitple-user-or-values-to-an-array
