@@ -6,4 +6,4 @@ remove-item "$userprofile\ownCloud\Freenas\Games\stardiew save\blips_118379463" 
 start-sleep -s 5
 Copy-Item "$userprofile\AppData\Roaming\StardewValley\Saves\blips_118379463" -Recurse "$userprofile\ownCloud\Freenas\Games\stardiew save"
 start-sleep -s 5
-rename-Item "$userprofile\AppData\Roaming\StardewValley\Saves\blips_118379463" "savebackup_$date.bak"
+rename-Item "$userprofile\AppData\Roaming\StardewValley\Saves\blips_118379463\blips_118379463" "savebackup_$date.bak"
