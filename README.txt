@@ -1,1 +1,1 @@
-"this is a test readme" 
+This repo is collection of workaday powershell scripts. 
