@@ -1,5 +1,5 @@
 $userprofile=$Env:USERPROFILE
-$date=Get-Date -format "MM-dd-yyyy::h:mm-ss"
+$date=Get-Date -format "MMddyyyyhmmss"
 $savename="blips_118379463"
 $localbackupsave="$savename_$date.bak"
 $savegameinfosave="SaveGameInfo_$date.bak"
