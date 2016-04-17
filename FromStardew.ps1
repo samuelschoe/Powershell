@@ -3,12 +3,15 @@ $date=Get-Date -format "MMddyyyyhmmss"
 $savename="blips_118379463"
 $localbackupsave="$savename_$date.bak"
 $savegameinfosave="SaveGameInfo_$date.bak"
+$cloudstorage="$userprofile\seafile\GameSaves\stardiew save"
+$gamesaveLocation="$userprofile\AppData\Roaming\StardewValley\Saves"
+$BackupSaveLocation="$userprofile\AppData\Roaming\StardewValley\Backupsaves"
 
-remove-item "$userprofile\ownCloud\Freenas\Games\stardiew save\$savename" -Recurse
+remove-item "$cloudstorage\$savename" -Recurse
 start-sleep -s 1
-Copy-Item   "$userprofile\AppData\Roaming\StardewValley\Saves\$savename" -Recurse "$userprofile\ownCloud\Freenas\Games\stardiew save"
+Copy-Item   "$gamesaveLocation\$savename" -Recurse "$userprofile\ownCloud\Freenas\Games\stardiew save"
 start-sleep -s 1
-rename-Item "$userprofile\AppData\Roaming\StardewValley\Saves\$savename\$savename" -Force "$savename_$date.bak"
-rename-Item "$userprofile\AppData\Roaming\StardewValley\Saves\$savename\SaveGameInfo" -Force "SaveGameInfo_$date.bak"
-move-item   "$userprofile\AppData\Roaming\StardewValley\Saves\$savename\$localbackupsave" "$userprofile\AppData\Roaming\StardewValley\Backupsaves" -Force
-move-item   "$userprofile\AppData\Roaming\StardewValley\Saves\$savename\$savegameinfosave" "$userprofile\AppData\Roaming\StardewValley\Backupsaves" -Force
+rename-Item "$gamesaveLocation\$savename\$savename" -Force "$savename_$date.bak"
+rename-Item "$gamesaveLocation\$savename\SaveGameInfo" -Force "SaveGameInfo_$date.bak"
+move-item   "$gamesaveLocation\$savename\$localbackupsave" "$BackupSaveLocation" -Force
+move-item   "$gamesaveLocation\$savename\$savegameinfosave" "$BackupSaveLocation" -Force
