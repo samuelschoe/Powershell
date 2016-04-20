@@ -9,7 +9,7 @@ $BackupSaveLocation="$userprofile\AppData\Roaming\StardewValley\Backupsaves"
 
 remove-item "$cloudstorage\$savename" -Recurse
 start-sleep -s 1
-Copy-Item   "$gamesaveLocation\$savename" -Recurse "$userprofile\ownCloud\Freenas\Games\stardiew save"
+Copy-Item   "$gamesaveLocation\$savename" -Recurse "$cloudstorage"
 start-sleep -s 1
 rename-Item "$gamesaveLocation\$savename\$savename" -Force "$savename_$date.bak"
 rename-Item "$gamesaveLocation\$savename\SaveGameInfo" -Force "SaveGameInfo_$date.bak"
