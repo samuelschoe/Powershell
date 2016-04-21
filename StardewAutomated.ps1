@@ -6,7 +6,7 @@
 
 
 $stardew="C:\GOG Games\Stardew Valley\Stardew Valley.exe"
-$array=(1..288)
+$array=(1..566)
 $userprofile=$Env:USERPROFILE
 $date=Get-Date -format "MMddyyyyhmmss"
 $savename="blips_118379463"
@@ -16,9 +16,20 @@ $cloudstorage="$userprofile\seafile\GameSaves\stardiew save"
 $gamesaveLocation="$userprofile\AppData\Roaming\StardewValley\Saves"
 $BackupSaveLocation="$userprofile\AppData\Roaming\StardewValley\Backupsaves"
 
+#copy save from cloud sync to stardew appdata folder
+
+remove-item "$gamesaveLocation\$savename" -Recurse -Force
+start-sleep -s 1
+Copy-Item   "$cloudstorage\$savename" -Recurse "$gamesaveLocation\" -Force
+rename-Item "$cloudstorage\$savename" "$savename_$date.bak" -Force
+start-sleep -s 1
+move-item   "$cloudstorage\$localbackupsave" "$cloudstorage\Backupsaves\" 
+
 
 Start $stardew
 
+
+#Watches the stardew exec. for several hours When closed, backups and moves save to cloud storage location. 
 $array | ForEach-Object {
   If (((get-process stardew* -ea 0) -ne $null) -ne $true){
   remove-item "$cloudstorage\$savename" -Recurse;
